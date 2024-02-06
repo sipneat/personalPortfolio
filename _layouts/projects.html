@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+{% assign filtered_projects = site.projects | where: "name", page.name %}
+    {% for project in filtered_projects %}
+    <div class="projectsPage">
+        <a class="backToProjects" href="{{ site.baseurl }}/projects">< Back to Projects</a>
+        <div class="projectHeader">
+            <h1>{{ project.name }}</h1>
+            <p><strong>{{ project.origin }}</strong></p>
+            <img src="{{ project.image }}" alt="{{ project.name }}">
+        </div>
+        <div class="projectLinksDiv">
+            {% if project.github_link %}
+            <a class="projectLinks" href="{{ project.github_link }}">GitHub Repo</a>
+            {% endif %}
+            {% if project.devpost_link %}
+            |
+            <a class="projectLinks" href="{{ project.devpost_link }}">Devpost</a>
+            {% endif %}
+        </div>
+            <p>{{ project.content }}</p>
+        <div class="projectSkills">
+            {% for skill in project.skills %}
+            <span class="skill">{{ skill }}</span>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}

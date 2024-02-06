@@ -1,0 +1,9 @@
+- name: Projects
+  content: Hackathons, personal projects, and more.
+  link: /projects/
+- name: Experience
+  content: Internships and professional experiences.
+  link: /experience/
+- name: Other
+  content: My baseball achievements, life, and other stuff.
+  link: /other/
