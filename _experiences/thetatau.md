@@ -1,9 +1,9 @@
 ---
-name: SCUACM
-blurb: The most computer science club on campus
+name: Theta Tau
+blurb: Professional Engineering Fraternity
 location: Santa Clara, CA
-link: /experiences/acm/
-image: /assets/images/acm.png
+link: /experiences/thetatau/
+image: /assets/images/tt.png
 priority: 1
 
 github_link: https://github.com/sipneat/Emotify

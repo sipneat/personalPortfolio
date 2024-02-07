@@ -7,23 +7,58 @@
 <p>I'm actively searching for internship SWE roles starting Summer 2025.</p>
 <p>Click on an experience to learn more.</p>
 
-<div class="experience">
+<div class="experiences">
     {% assign sorted_experiences = site.experiences | sort:"priority" %}
     {% for experience in sorted_experiences %}
-        <a class="experience" href="{{ experience.link }}">
+        <button class="experience" id="clickPopup{{ forloop.index }}">
             <div class="experienceContainer">
                 <div class="experienceImage">
                     <img src="{{ experience.image }}" alt="{{ experience.name }}">
                 </div>
                 <div class="experienceInfo">
                     <h2>{{ experience.name }}</h2>
+                    <p><strong>{{ experience.location }}</strong></p>
                     <p>{{ experience.blurb }}</p>
                 </div>
             </div>
-            <div class="experienceContainer">
-                <p><strong>{{ experience.location }}</strong></p>
+        </button>
+        <div id="myPopup{{ forloop.index }}" class="popup">
+            <a id="closePopup{{ forloop.index }}" class="popupClose">X</a>
+            <div class="popupContent">
+                <h1>{{ experience.name }}</h1>
+                <p><strong>{{ experience.origin }}</strong></p>
+                <img src="{{ experience.image }}" alt="{{ experience.name }}">
+                <p>{{ experience.description }}</p>
+                <p><strong>Role:</strong> {{ experience.role }}</p>
+                <p><strong>Duration:</strong> {{ experience.duration }}</p>
             </div>
-        </a>
+        </div>
 
     {% endfor %}
 </div>
+
+<script>
+    var clickPopups = document.querySelectorAll('.experience');
+    var myPopups = document.querySelectorAll('.popup');
+    var closePopups = document.querySelectorAll('.popup > a');
+
+    clickPopups.forEach(function(clickPopup, index) {
+        clickPopup.addEventListener('click', function() {
+            myPopups[index].classList.add('show');
+        });
+    });
+
+    closePopups.forEach(function(closePopup, index) {
+        closePopup.addEventListener('click', function() {
+            myPopups[index].classList.remove('show');
+        });
+    });
+
+    window.addEventListener('click', function(event) {
+        myPopups.forEach(function(myPopup) {
+            if (event.target == myPopup) {
+                myPopup.classList.remove('show');
+            }
+        });
+    });
+</script>

@@ -2,7 +2,6 @@ collections:
   projects:
     output: true
   experiences:
-    output: true
 
 defaults:
   - scope:
@@ -10,11 +9,6 @@ defaults:
       type: "projects"
     values:
       layout: "projects"
-  - scope:
-      path: ""
-      type: "experiences"
-    values:
-      layout: "experiences"
   - scope:
       path: ""
     values:
