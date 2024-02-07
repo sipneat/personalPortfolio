@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+{% assign filtered_experiences = site.experiences | where: "name", page.name %}
+    {% for experience in filtered_experiences %}
+    <div class="experiencesPage">
+        <a class="backToExperiences" href="{{ site.baseurl }}/experiences">Back to Experiences</a>
+        <div class="experienceHeader">
+            <h1>{{ experience.name }}</h1>
+            <p><strong>{{ experience.origin }}</strong></p>
+            <img src="{{ experience.image }}" alt="{{ experience.name }}">
+        </div>
+    </div>

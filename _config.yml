@@ -10,5 +10,10 @@ defaults:
       layout: "projects"
   - scope:
       path: ""
+      type: "experiences"
+    values:
+      layout: "experiences"
+  - scope:
+      path: ""
     values:
       layout: "default"

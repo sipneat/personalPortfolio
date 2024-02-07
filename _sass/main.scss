@@ -4,7 +4,7 @@ body {
     min-height: 100vh;
     font: {
         family: 'Aptos', sans-serif;
-        size: 1.2em;
+        size: 1rem;
     }
     background: linear-gradient(#22092C, #872341);
     color: #F05941;
@@ -12,14 +12,14 @@ body {
     scrollbar-width: none;
     background-attachment: fixed;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem;
     max-width: 70vw;
     text-align: center;
 }
 
 hr {
     border: 1px solid #F05941;
-    margin: 15px;
+    margin: 10px;
 }
 
 .header {
@@ -30,6 +30,7 @@ hr {
 
 .nav {
     display: flex;
+    font-size: 1.2rem;
     justify-content: space-between;
     padding: 5px;
     margin: 5px;
@@ -63,7 +64,10 @@ hr {
         transition: background-color 0.5s;
     }
     transition: background-color 0.5s;
-    
+}
+
+.paneItem h2, .paneItem p {
+    margin: 15px;
 }
 
 .projects {
@@ -76,7 +80,7 @@ hr {
     display: flex;
     justify-content: space-between;
     margin: 20px;
-    width: 50vw;
+    width: 50rem;
     border-radius: 20px;
     &:hover {
         background-color: #22092C;
@@ -97,8 +101,8 @@ hr {
 }
 
 .projectImage img {
-    width: 150px;
-    height: 150px;
+    width: 10rem;
+    height: 10rem;
     border-radius: 15px;
 }
 
@@ -161,13 +165,13 @@ hr {
 }
 
 .footerRight img {
-    margin: 5px;
+    margin: 0.5rem;
 }
 
 .footer span {
     color: #872341;
     background-color: white;
     border-radius: 50px;
-    padding: 15px;
-    margin: 5px;
+    padding: 1rem;
+    margin: 0.5rem;
 }
