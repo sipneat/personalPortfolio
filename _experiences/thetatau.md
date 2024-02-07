@@ -2,17 +2,12 @@
 name: Theta Tau
 blurb: Professional Engineering Fraternity
 location: Santa Clara, CA
-link: /experiences/thetatau/
 image: /assets/images/tt.png
-priority: 1
+priority: 2
 
-github_link: https://github.com/sipneat/Emotify
-devpost_link: https://devpost.com/software/emotify-s3mg4t
-skills: 
-  - React Native
-  - Full-Stack Dev
-  - OpenAPI/ChatGPT
-  - JavaScript
+bigImage: /assets/images/bigtt.jpg
+role: Member --> Pledge Class Fundraising Chair
+duration: Jan 2023 - Present
 ---
 
 woah

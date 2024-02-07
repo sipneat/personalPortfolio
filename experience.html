@@ -23,14 +23,21 @@
             </div>
         </button>
         <div id="myPopup{{ forloop.index }}" class="popup">
-            <a id="closePopup{{ forloop.index }}" class="popupClose">X</a>
             <div class="popupContent">
-                <h1>{{ experience.name }}</h1>
-                <p><strong>{{ experience.origin }}</strong></p>
-                <img src="{{ experience.image }}" alt="{{ experience.name }}">
-                <p>{{ experience.description }}</p>
-                <p><strong>Role:</strong> {{ experience.role }}</p>
-                <p><strong>Duration:</strong> {{ experience.duration }}</p>
+                <img class="popupBigImage" src="{{ experience.bigImage }}" alt="{{ experience.name }}">
+                <div class = popupHeader>
+                    <div class="popupContainer">
+                        <h2>{{ experience.name }}</h2>
+                        <p>{{ experience.location }}</p>
+                    </div>
+                    <div class="popupContainer">
+                        <img src="{{ experience.image }}" alt="{{ experience.name }}">
+                    </div>
+                </div>
+                <p>Role: {{ experience.role }}</p>
+                <p>{{ experience.duration }}</p>
+                <hr>
+                <p>{{ experience.content }}</p>
             </div>
         </div>
 
@@ -40,17 +47,10 @@
 <script>
     var clickPopups = document.querySelectorAll('.experience');
     var myPopups = document.querySelectorAll('.popup');
-    var closePopups = document.querySelectorAll('.popup > a');
 
     clickPopups.forEach(function(clickPopup, index) {
         clickPopup.addEventListener('click', function() {
             myPopups[index].classList.add('show');
-        });
-    });
-
-    closePopups.forEach(function(closePopup, index) {
-        closePopup.addEventListener('click', function() {
-            myPopups[index].classList.remove('show');
         });
     });
 

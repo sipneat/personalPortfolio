@@ -4,15 +4,10 @@ blurb: I made a desk job into something more
 location: Roseville, CA
 link: /experiences/klaw/
 image: /assets/images/klaw.png
-priority: 2
+priority: 3
 
-github_link: https://github.com/sipneat/Emotify
-devpost_link: https://devpost.com/software/emotify-s3mg4t
-skills: 
-  - React Native
-  - Full-Stack Dev
-  - OpenAPI/ChatGPT
-  - JavaScript
+role: File Clerk --> IT Support
+duration: Feb 2021 - Jun 2022 / Jun 2023 - Sep 2023
 ---
 
 holy shit
