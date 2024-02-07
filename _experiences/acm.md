@@ -2,7 +2,7 @@
 name: Khatami Law APC
 blurb: gamer
 location: Roseville, CA
-link: /projects/klaw/
+link: /projects/acm/
 image: /assets/images/klaw.png
 priority: 1
 
@@ -15,4 +15,4 @@ skills:
   - JavaScript
 ---
 
-holy shit
+woah

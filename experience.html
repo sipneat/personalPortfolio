@@ -1,0 +1,29 @@
+---
+    title: Experience
+---
+
+<h1>{{ page.title }}</h1>
+
+<p>I'm actively searching for internship SWE roles starting Summer 2025.</p>
+<p>Click on an experience to learn more.</p>
+
+<div class="experience">
+    {% assign sorted_experiences = site.experiences | sort:"priority" %}
+    {% for experience in sorted_experiences %}
+        <a class="experience" href="{{ experience.link }}">
+            <div class="experienceContainer">
+                <div class="experienceImage">
+                    <img src="{{ experience.image }}" alt="{{ experience.name }}">
+                </div>
+                <div class="experienceInfo">
+                    <h2>{{ experience.name }}</h2>
+                    <p>{{ experience.blurb }}</p>
+                </div>
+            </div>
+            <div class="experienceContainer">
+                <p><strong>{{ experience.location }}</strong></p>
+            </div>
+        </a>
+
+    {% endfor %}
+</div>

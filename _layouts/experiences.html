@@ -12,3 +12,10 @@ layout: default
             <img src="{{ experience.image }}" alt="{{ experience.name }}">
         </div>
     </div>
+    <div class="experienceContent">
+        <p>{{ experience.description }}</p>
+        <p><strong>Role:</strong> {{ experience.role }}</p>
+        <p><strong>Duration:</strong> {{ experience.duration }}</p>
+    </div>
+    {% endfor %}
+    
