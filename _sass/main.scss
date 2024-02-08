@@ -1,30 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu');
+$font-color: white;
+$nav-color: #761ec8;
+$hover-color: #933DC9;
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(5vh);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes appear {
+    0% {
+        visibility: visible;
+        opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     font: {
-        family: 'Aptos', sans-serif;
+        family: 'Ubuntu', sans-serif;
         size: 1.2rem;
     }
-    background: linear-gradient(#22092C, #872341);
-    color: #F05941;
+    background: linear-gradient(black, #22092C);
+    color: $font-color;
     -ms-overflow-style: none;
     scrollbar-width: none;
     background-attachment: fixed;
     margin: 0 auto;
     padding: 1rem;
-    max-width: 90vw;
+    max-width: 70vw;
     text-align: center;
 }
 
 hr {
-    border: 1px solid #F05941;
+    border: 1px solid $nav-color;
     margin: 10px;
 }
 
 h1 {
     font-size: 3rem;
-    margin: 10px;
+    margin: 20px;
 }
 
 .header {
@@ -35,23 +62,24 @@ h1 {
 
 .nav {
     display: flex;
-    font-size: 1.2rem;
     justify-content: space-between;
+    font-style: italic;
     padding: 5px;
     margin: 5px;
 }
 
 .navItem{
-    color: #F05941;
+    color: $nav-color;
     text-decoration: none;
     padding: 5px;
     margin: 5px;
     &:hover {
-        color: #872341;
+        color: $hover-color;
     }
 }
 
 .pane {
+    visibility: hidden;
     display: flex;
     flex-direction: column;
     padding: 5px;
@@ -59,16 +87,28 @@ h1 {
 }
 
 .paneItem {
-    text-align: center;
-    color: #F05941;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $font-color;
+    width: 50rem;
     text-decoration: none;
-    margin: 10px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
     border-radius: 100px;
     &:hover {
-        background-color: #22092C;
+        background-color: $hover-color;
         transition: background-color 0.5s;
     }
     transition: background-color 0.5s;
+}
+
+@for $i from 1 through 5 {
+    .paneItem:nth-child(#{$i}) {
+        animation: appear 1s forwards;
+        animation-delay: $i * 0.5s;
+    }
 }
 
 .paneItem h2, .paneItem p {
@@ -79,6 +119,7 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    animation: slideUp 0.5s forwards;
 }
 
 .experiences {
@@ -88,17 +129,30 @@ h1 {
 }
 
 .project, .experience {
+    color: $font-color;
     display: flex;
     justify-content: space-between;
     margin: 20px;
     width: 60rem;
+    max-width: 100%;
     border-radius: 20px;
     &:hover {
-        background-color: #22092C;
+        background-color: $hover-color;
         transition: background-color 0.5s;
     }
     transition: background-color 0.5s;
     text-decoration: none;
+}
+
+.experience {
+    visibility: hidden;
+}
+
+@for $i from 1 through 5 {
+    .experience:nth-child(#{$i}) {
+        animation: appear 0.5s forwards;
+        animation-delay: $i * 0.2s;
+    }
 }
 
 button {
@@ -110,7 +164,7 @@ button {
     font-size: 1.2rem;
     cursor: pointer;
     &:hover {
-        background-color: #22092C;
+        background-color: $hover-color;
         transition: background-color 0.5s;
     }
     transition: background-color 0.5s;
@@ -142,25 +196,47 @@ button {
 .projectInfo h2, .experienceInfo h2, p {
     margin: 5px;
     padding: 0;
-    color: #F05941;
 }
 
 .projectsPage {
-    text-align: left;
+    display: flex;
+    justify-content: space-between;
 }
 
 .projectsPage p, .projectsPage a{
-    font-size: 1.2rem;
     margin: 1rem;
     padding: 0;
 }
 
 .backToProjects {
+    display: flex;
+    justify-content: left;
     text-decoration: none;
-    color: #F05941;
+    color: $nav-color;
     &:hover {
-        color: #872341;
+        color: $hover-color;
     }
+}
+
+.projectBodyText {
+    text-align: left;
+    width: 60rem;
+}
+
+.projectImages {
+    width: 40rem;
+}
+
+.projectImages img {
+    width: 100%;
+    height: 20rem;
+    margin: 10px;
+}
+
+.projectImages iframe {
+    width: 100%;
+    height: 20rem;
+    margin: 10px;
 }
 
 .projectHeader {
@@ -182,18 +258,18 @@ button {
 
 .projectLinks {
     text-decoration: none;
-    color: lightseagreen;
+    color: $nav-color;
     &:hover {
-        color: #872341;
+        color: $hover-color;
     }
     margin: 1rem;
 }
 
 .projectContent a {
-    color: #F05941;
+    color: $font-color;
     text-decoration: none;
     &:hover {
-        color: #872341;
+        color: $hover-color;
     }
 }
 
@@ -203,16 +279,20 @@ button {
 }
 
 .skill {
+    display: inline-block;
+    color: $font-color;
     margin-right: 0.8rem;
+    margin-bottom: 0.8rem;
     font-size: 1.5rem;
-    border: 2px solid #22092C;
-    background-color: rgba(34, 9, 44, 0.5);
+    border: 2px solid $nav-color;
+    background-color: rgba(147, 61, 201, 0.5);
     border-radius: 10px;
     padding: 0.4rem;
     user-select: none;
 }
 
 .experience {
+    color: $font-color;
     width: 30rem;
 }
 
@@ -225,17 +305,21 @@ button {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     display: none;
+    animation: appear 0.7s forwards;
 }
 
 .popupContent {
     position: relative;
     background-color: #22092C;
     padding: 20px;
-    border: 2px solid #F05941;
+    border: 2px solid $nav-color;
     border-radius: 20px;
     margin: auto;
     width: 50%;
+    height: 70rem;
     transform: translate(0, 4rem);
+    animation: appear 0.7s forwards;
+
 }
 
 .popupContainer img {
@@ -246,10 +330,11 @@ button {
 }
 
 .popupBigImage {
-    width: 20rem;
-    height: 14rem;
+    width: 50rem;
+    max-width: 100%;
+    height: 35rem;
     border-radius: 15px;
-    margin: 20px;
+    margin-bottom: 20px;
 }
 
 .popupHeader h2, .popupHeader p {
@@ -264,6 +349,11 @@ button {
 }
 
 .popupContent hr {
+    margin: 1rem;
+}
+
+.popupContent p {
+    text-align: left;
     margin: 1rem;
 }
 
@@ -294,7 +384,7 @@ button {
 }
 
 .footer span {
-    color: #872341;
+    color: #22092C;
     background-color: white;
     border-radius: 50px;
     padding: 1rem;

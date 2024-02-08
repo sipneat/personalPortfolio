@@ -4,29 +4,42 @@ layout: default
 
 {% assign filtered_projects = site.projects | where: "name", page.name %}
     {% for project in filtered_projects %}
+    <a class="backToProjects" href="{{ site.baseurl }}/projects">< Back to Projects</a>
     <div class="projectsPage">
-        <a class="backToProjects" href="{{ site.baseurl }}/projects">< Back to Projects</a>
-        <div class="projectHeader">
-            <h1>{{ project.name }}</h1>
-            <img src="{{ project.image }}" alt="{{ project.name }}">
+        <div class="projectBodyText">
+            <div class="projectHeader">
+                <h1>{{ project.name }}</h1>
+                <img src="{{ project.image }}" alt="{{ project.name }}">
+            </div>
+            <div class="projectLinksDiv">
+                <p><strong>{{ project.origin }}</strong></p>
+                {% if project.github_link %}
+                <a class="projectLinks" href="{{ project.github_link }}" target="_blank">GitHub Repo</a>
+                {% endif %}
+                {% if project.devpost_link %}
+                |
+                <a class="projectLinks" href="{{ project.devpost_link }}" target="_blank">Devpost</a>
+                {% endif %}
+            </div>
+            <div class="projectContent">
+                {{ project.content }}
+            </div>
+            <div class="projectSkills">
+                {% for skill in project.skills %}
+                <span class="skill">{{ skill }}</span>
+                {% endfor %}
+            </div>
         </div>
-        <div class="projectLinksDiv">
-            <p><strong>{{ project.origin }}</strong></p>
-            {% if project.github_link %}
-            <a class="projectLinks" href="{{ project.github_link }}">GitHub Repo</a>
+        <div class="projectImages">
+            {% if project.video %}
+            <iframe src="{{ project.video }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p style="font-style: italic;">Demo Video</p>
             {% endif %}
-            {% if project.devpost_link %}
-            |
-            <a class="projectLinks" href="{{ project.devpost_link }}">Devpost</a>
-            {% endif %}
-        </div>
-        <div class="projectContent">
-            {{ project.content }}
-        </div>
-        <div class="projectSkills">
-            {% for skill in project.skills %}
-            <span class="skill">{{ skill }}</span>
+            {% for image in project.images %}
+                <img src="{{ image }}" alt="{{ project.name }}">
+                <p style="font-style: italic;">{{ project.imageDesc[forloop.index0] }}</p>
             {% endfor %}
         </div>
     </div>
+
     {% endfor %}

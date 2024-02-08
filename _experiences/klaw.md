@@ -6,6 +6,7 @@ link: /experiences/klaw/
 image: /assets/images/klaw.png
 priority: 3
 
+bigImage: /assets/images/bigklaw.jpg
 role: File Clerk --> IT Support
 duration: Feb 2021 - Jun 2022 / Jun 2023 - Sep 2023
 ---
