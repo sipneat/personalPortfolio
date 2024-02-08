@@ -303,19 +303,17 @@ button {
     border: 2px solid $nav-color;
     border-radius: 20px;
     margin: auto;
-    width: 50em;
-    max-width: 70%;
-    height: 60em;
-    max-height: 70%;
+    width: 50%;
+    height: 70%;
+    overflow-y: auto;
+    overflow-x: hidden;
     transform: translate(0, 4rem);
     animation: appear 0.7s forwards;
 }
 
-@media screen and (max-width: 600px) {
-    .popupContent {
-        font-size: 0.6em;
-    }
-    
+.popupContainer {
+    max-width: 100%;
+    height: auto;
 }
 
 .popupContainer p {
@@ -331,13 +329,22 @@ button {
 }
 
 .popupBigImage {
-    max-width: 70%;
+    max-width: 50%;
     height: auto;
     border-radius: 15px;
     margin-bottom: 1em;
 }
 
+@media screen and (max-width: 600px) {
+    .popupBigImage {
+        max-width: 100%;
+    }
+    
+}
+
 .popupHeader {
+    width: 100%;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
