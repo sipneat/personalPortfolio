@@ -1,5 +1,5 @@
 ---
-name: PDFScanScript
+name: PDF Scan Script
 blurb: A Python script to scan PDFs for streamlining legal productivity
 origin: Personal Project
 link: /projects/pdfscanscript/
