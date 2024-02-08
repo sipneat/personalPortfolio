@@ -31,7 +31,7 @@ body {
     min-height: 100vh;
     font: {
         family: 'Ubuntu', sans-serif;
-        size: 1.2rem;
+        size: calc(1.2rem - 0.2vw);
     }
     background: linear-gradient(black, #22092C);
     color: $font-color;
@@ -50,7 +50,12 @@ hr {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: calc(3rem - 0.7vw);
+    margin: 20px;
+}
+
+h2 {
+    font-size: calc(2rem - 0.5vw);
     margin: 20px;
 }
 
@@ -317,6 +322,7 @@ button {
     margin: auto;
     width: 50%;
     height: 70rem;
+    max-height: 80vh;
     transform: translate(0, 4rem);
     animation: appear 0.7s forwards;
 
@@ -330,11 +336,12 @@ button {
 }
 
 .popupBigImage {
-    width: 50rem;
-    max-width: 100%;
-    height: 35rem;
+    width: 30vw;
+    height: 30vh;
     border-radius: 15px;
     margin-bottom: 20px;
+    object-fit: cover;
+
 }
 
 .popupHeader h2, .popupHeader p {
