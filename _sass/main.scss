@@ -31,7 +31,7 @@ body {
     min-height: 100vh;
     font: {
         family: 'Ubuntu', sans-serif;
-        size: calc(1.2rem - 0.2vw);
+        size: 1.5vw;
     }
     background: linear-gradient(black, #22092C);
     color: $font-color;
@@ -50,12 +50,6 @@ hr {
 }
 
 h1 {
-    font-size: calc(3rem - 0.7vw);
-    margin: 20px;
-}
-
-h2 {
-    font-size: calc(2rem - 0.5vw);
     margin: 20px;
 }
 
@@ -69,8 +63,6 @@ h2 {
     display: flex;
     justify-content: space-between;
     font-style: italic;
-    padding: 5px;
-    margin: 5px;
 }
 
 .navItem{
@@ -96,7 +88,7 @@ h2 {
     align-items: center;
     justify-content: center;
     color: $font-color;
-    width: 50rem;
+    width: 60vw;
     text-decoration: none;
     margin: auto;
     margin-top: 10px;
@@ -166,7 +158,6 @@ button {
     border-radius: 10px;
     padding: 10px;
     margin: 10px;
-    font-size: 1.2rem;
     cursor: pointer;
     &:hover {
         background-color: $hover-color;
@@ -288,7 +279,6 @@ button {
     color: $font-color;
     margin-right: 0.8rem;
     margin-bottom: 0.8rem;
-    font-size: 1.5rem;
     border: 2px solid $nav-color;
     background-color: rgba(147, 61, 201, 0.5);
     border-radius: 10px;
@@ -322,7 +312,7 @@ button {
     margin: auto;
     width: 50%;
     height: 70rem;
-    max-height: 80vh;
+    max-height: 85vh;
     transform: translate(0, 4rem);
     animation: appear 0.7s forwards;
 
@@ -387,13 +377,15 @@ button {
 }
 
 .footerRight img {
-    margin: 0.5rem;
+    width: 4vw;
+    height: 4vw;
+    margin: 0.5vw;
 }
 
 .footer span {
     color: #22092C;
     background-color: white;
     border-radius: 50px;
-    padding: 1rem;
-    margin: 0.5rem;
+    padding: 1vw;
+    margin: 0.5vw;
 }

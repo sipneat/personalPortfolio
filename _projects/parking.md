@@ -16,11 +16,11 @@ skills:
   - APIs
   - JavaScript
 images:
- - /assets/images/parking1.jpg
- - /assets/images/parking2.jpg
+  - /assets/images/parking1.jpg
+  - /assets/images/parking2.jpg
 imageDesc:
- - Home Page
- - SF Street View
+  - Home Page
+  - SF Street View
 ---
 
 Parking++ is a web app that aims to help you find parking suitable to your needs. Users can input the location, and the output is the distance from destination, cost, and availability of the parking. Then, the user can use Google Street View to preview where they can park, essentially creating a user friendly environment to solve all their parking needs.
