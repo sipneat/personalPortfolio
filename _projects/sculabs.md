@@ -7,11 +7,11 @@ image: /assets/images/scu.png
 priority: 5
 
 github_link: https://github.com/sipneat
-skills: 
-  - C
-  - C++
-  - ARM Assembly
-  - Verilog
+skills:
+    - C
+    - C++
+    - ARM Assembly
+    - Verilog
 ---
 
 Collection of my Computer Science & Engineering Labs at Santa Clara University

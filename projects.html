@@ -1,5 +1,5 @@
 ---
-    title: Projects
+title: Projects
 ---
 
 <h1>{{ page.title }}</h1>
@@ -9,20 +9,20 @@
 <div class="projects">
     {% assign sorted_projects = site.projects | sort:"priority" %}
     {% for project in sorted_projects %}
-        <a class="project" href="{{ project.link }}">
-            <div class="projectContainer">
-                <div class="projectImage">
-                    <img src="{{ project.image }}" alt="{{ project.name }}">
-                </div>
-                <div class="projectInfo">
-                    <h2>{{ project.name }}</h2>
-                    <p>{{ project.blurb }}</p>
-                </div>
+    <a class="project" href="{{ project.link }}">
+        <div class="projectContainer">
+            <div class="projectImage">
+                <img src="{{ project.image }}" alt="{{ project.name }}">
             </div>
-            <div class="projectOrigin">
-                <p><strong>{{ project.origin }}</strong></p>
+            <div class="projectInfo">
+                <h2>{{ project.name }}</h2>
+                <p>{{ project.blurb }}</p>
             </div>
-        </a>
-        
+        </div>
+        <div class="projectOrigin">
+            <p><strong>{{ project.origin }}</strong></p>
+        </div>
+    </a>
+
     {% endfor %}
 </div>

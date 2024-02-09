@@ -1,15 +1,15 @@
 collections:
-  projects:
-    output: true
-  experiences:
+    projects:
+        output: true
+    experiences:
 
 defaults:
-  - scope:
-      path: ""
-      type: "projects"
-    values:
-      layout: "projects"
-  - scope:
-      path: ""
-    values:
-      layout: "default"
+    - scope:
+          path: ""
+          type: "projects"
+      values:
+          layout: "projects"
+    - scope:
+          path: ""
+      values:
+          layout: "default"
