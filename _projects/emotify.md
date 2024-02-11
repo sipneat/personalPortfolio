@@ -1,5 +1,5 @@
 ---
-name: Emotify
+title: Emotify
 blurb: A mobile app to get you in touch with your emotions
 origin: Hack For Humanity 2023
 link: /projects/emotify/

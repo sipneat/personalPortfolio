@@ -1,5 +1,5 @@
 ---
-name: Parking++
+title: Parking++
 blurb: Parking so nice, we added it twice!
 origin: INRIX Hack SCU 2023
 link: /projects/parking/

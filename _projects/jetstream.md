@@ -1,5 +1,5 @@
 ---
-name: JetStream
+title: JetStream
 blurb: A web application that allows you to get anywhere
 origin: INRIX Hack Seattle 2023
 link: /projects/jetstream/

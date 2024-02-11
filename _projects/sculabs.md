@@ -1,5 +1,5 @@
 ---
-name: SCU COEN Labs
+title: SCU COEN Labs
 blurb: Labs that I have done for my major
 origin: Santa Clara University
 link: /projects/sculabs/

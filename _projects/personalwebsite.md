@@ -1,9 +1,9 @@
 ---
-name: Personal Portfolio Website
+title: Personal Portfolio Website
 blurb: The site you are currently on
 origin: Personal Project
 link: /projects/personalwebsite/
-image:
+image: /assets/images/personalwebsite.png
 priority: 3
 
 github_link: https://github.com/sipneat/personalPortfolio
