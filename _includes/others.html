@@ -1,16 +1,6 @@
----
-title: Other
----
-
-<h1>{{ page.title }}</h1>
-
-<p>I'm more than just a Computer Science student. Check out some of the things I do outside of my studies and
-    professional development!</p>
-
 <div class="other">
     {% for item in site.data.others %}
-    {% assign is_even = forloop.index | modulo: 2 %}
-    {% if is_even == 1 %}
+    {% if forloop.index | modulo: 2 == 0%}
     <div class="otherSection">
         <div class="otherContent">
             <h2>{{ item.title }}</h2>
@@ -32,6 +22,4 @@ title: Other
             <p>{{ item.content }}</p>
         </div>
     </div>
-    {% endif %}
-    {% endfor %}
 </div>

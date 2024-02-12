@@ -16,10 +16,10 @@ skills:
 
 Collection of my Computer Science & Engineering Labs at Santa Clara University
 
-[COEN12: Data Structures](https://github.com/sipneat)
+[COEN12: Data Structures](https://github.com/sipneat/COEN-12)
 
 [COEN20: Embedded Systems](https://github.com/sipneat)
 
-[COEN79: Object Oriented Programming](https://github.com/sipneat)
+[COEN79: Object Oriented Programming](https://github.com/sipneat/COEN-79)
 
-[COEN122: Computer Architecture](https://github.com/sipneat)
+[COEN122: Computer Architecture](https://github.com/sipneat/COEN-122)

@@ -7,11 +7,13 @@ $hover-color: #933DC9;
     from {
         opacity: 0;
         transform: translateY(5vh);
+        visibility: hidden;
     }
 
     to {
         opacity: 1;
         transform: translateY(0);
+        visibility: visible;
     }
 }
 
@@ -56,9 +58,9 @@ hr {
 
 .header {
     text-align: center;
-    ;
     padding: 1em;
     margin: 1em;
+    animation: slideUp 0.5s forwards;
 }
 
 .nav {
@@ -106,7 +108,7 @@ hr {
 
 @for $i from 1 through 10 {
     .paneItem:nth-child(#{$i}) {
-        animation: appear 1s forwards;
+        animation: appear 0.5s forwards;
         animation-delay: $i * 0.5s;
     }
 }
@@ -120,7 +122,6 @@ hr {
     display: flex;
     flex-direction: column;
     align-items: center;
-    animation: slideUp 0.5s forwards;
 }
 
 .experiences {
@@ -146,15 +147,17 @@ hr {
 
     transition: background-color 0.5s;
     text-decoration: none;
-}
-
-.experience {
     visibility: hidden;
 }
 
 @for $i from 1 through 10 {
     .experience:nth-child(#{$i}) {
         animation: appear 0.5s forwards;
+        animation-delay: $i * 0.2s;
+    }
+
+    .project:nth-child(#{$i}) {
+        animation: slideUp 0.5s forwards;
         animation-delay: $i * 0.2s;
     }
 }
@@ -292,9 +295,8 @@ button {
 }
 
 .projectSkills {
-    margin-top: 3em;
+    margin-top: 2em;
     margin-bottom: 2em;
-    margin-left: 1em;
 }
 
 .skill {
@@ -330,7 +332,7 @@ button {
     position: relative;
     background-color: #22092C;
     padding: 2em;
-    padding-right: 3em;
+    padding-right: 2em;
     border: 2px solid $nav-color;
     border-radius: 20px;
     margin: auto;
@@ -390,7 +392,8 @@ button {
 }
 
 .popupContent hr {
-    margin: 1em;
+    margin: 1em auto;
+    width: 95%;
 }
 
 .popupContent p {
@@ -409,6 +412,14 @@ button {
     justify-content: space-between;
     width: 100%;
     margin-bottom: 3em;
+    visibility: hidden;
+}
+
+@for $i from 1 through 10 {
+    .otherSection:nth-child(#{$i}) {
+        animation: slideUp 1s forwards;
+        animation-delay: $i * 0.2s;
+    }
 }
 
 .otherContent {

@@ -1,6 +1,6 @@
 ---
 name: SCUACM
-blurb: The most computer science club on campus
+blurb: The largest computer science club on campus
 location: Santa Clara, CA
 image: /assets/images/acm.png
 priority: 1
