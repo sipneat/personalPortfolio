@@ -5,7 +5,7 @@ location: Santa Clara, CA
 image: /assets/images/acm.png
 priority: 1
 
-bigImage: /assets/images/bigacm.jpg
+bigImage: /assets/images/bigacm1.jpg
 role: Underclass Rep --> Workshop Coordinator
 duration: Sep 2022 - Present
 ---
