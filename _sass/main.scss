@@ -417,6 +417,10 @@ button {
     width: 100%;
     margin-bottom: 3em;
     visibility: hidden;
+
+    @media screen and (max-width: 1500px) {
+        flex-direction: column;
+    }
 }
 
 @for $i from 1 through 10 {
@@ -438,6 +442,15 @@ button {
     text-align: right;
 }
 
+@media screen and (max-width: 1500px) {
+
+    .otherContent,
+    .otherContent:nth-child(even) {
+        text-align: center;
+        padding-right: 0;
+    }
+}
+
 .otherContent a {
     color: $nav-color;
     text-decoration: none;
@@ -456,10 +469,12 @@ button {
     padding: 0;
 }
 
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 600px) {
     .otherImages {
         flex-direction: column;
+        width: 100%;
     }
+
 }
 
 .otherImages img {

@@ -20,6 +20,11 @@
   image1: /assets/images/motorcycle.png
   image2: /assets/images/car.jpg
 - title: Travel
-  content: I've been playing the baseball since I was 8 years old and I can truly say it has shaped me into the person I am today. blah blah
+  content:
+      When I went to Europe in the Summer of 2022, my outlook on the world changed. I had travelled within California for basically all my life for baseball tournaments,
+      but never had I flown to a completely different place, complete with its own languages and customs. During my 10 days stint in Germany and Italy, I learned all about the
+      lives of people across the world, the history of buildings older than the United States, and looking at real things I only read about in books. Considering I had never
+      even flown to the east coast or Hawaii, this was quite a shock for me, but I wish I could've stayed longer. Although I have not visited any other place like it,
+      I want to continue my travelling journey by going back to Europe or East Asia and expose myself to even more culture!
   image1: /assets/images/travel1.png
   image2: /assets/images/travel2.png
