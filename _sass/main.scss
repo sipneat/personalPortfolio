@@ -56,6 +56,10 @@ hr {
     margin-top: 1.5em;
 }
 
+p {
+    line-height: 1.5;
+}
+
 .header {
     text-align: center;
     padding: 1em;
@@ -432,6 +436,15 @@ button {
     padding-left: 0;
     padding-right: 1em;
     text-align: right;
+}
+
+.otherContent a {
+    color: $nav-color;
+    text-decoration: none;
+
+    &:hover {
+        color: $hover-color;
+    }
 }
 
 .otherImages {
