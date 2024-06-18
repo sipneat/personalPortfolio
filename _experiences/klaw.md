@@ -4,7 +4,7 @@ blurb: I made a desk job into something more
 location: Roseville, CA
 link: /experiences/klaw/
 image: /assets/images/klaw.png
-priority: 3
+priority: 4
 
 bigImage: /assets/images/bigklaw.jpg
 role: File Clerk --> IT Support

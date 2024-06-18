@@ -4,7 +4,7 @@ blurb: The site you are currently on
 origin: Personal Project
 link: /projects/personalwebsite/
 image: /assets/images/personalwebsite.png
-priority: 4
+priority: 5
 
 github_link: https://github.com/sipneat/personalPortfolio
 skills:
