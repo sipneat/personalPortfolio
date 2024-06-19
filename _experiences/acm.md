@@ -6,7 +6,7 @@ image: /assets/images/acm.png
 priority: 1
 
 bigImage: /assets/images/bigacm1.jpg
-role: Underclass Rep --> Workshop Coordinator
+role: Underclass Rep --> Workshop Coordinator --> Vice President
 duration: Sep 2022 - Present
 ---
 

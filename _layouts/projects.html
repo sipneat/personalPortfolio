@@ -21,6 +21,9 @@ layout: default
                     |
                     <a class="projectLinks" href="{{ project.devpost_link }}" target="_blank">Devpost</a>
                     {% endif %}
+                    {% if project.other_link %}
+                    <a class="projectLinks" href="{{ project.other_link }}" target="_blank">Link</a>
+                    {% endif %}
                 </div>
                 <div class="projectContent">
                     {{ project.content }}
