@@ -1,6 +1,6 @@
 ---
 name: SCUACM
-blurb: The largest computer science club on campus
+blurb: Vice President
 location: Santa Clara, CA
 image: /assets/images/acm.png
 priority: 1

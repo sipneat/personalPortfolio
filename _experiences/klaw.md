@@ -1,6 +1,6 @@
 ---
 name: Khatami Law APC
-blurb: I made a desk job into something more
+blurb: IT Support
 location: Roseville, CA
 link: /experiences/klaw/
 image: /assets/images/klaw.png
