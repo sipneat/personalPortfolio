@@ -8,7 +8,7 @@ priority: 2
 
 bigImage: /assets/images/bigcmg.png
 role: DevOps Engineering Intern
-duration: June 2024 - Present
+duration: June 2024 - Sept 2024
 ---
 
 CMG Financial’s lending philosophy focuses on making sure borrowers get not just a mortgage, but that they get the right solution to fit their broader financial goals. Privately held by Christopher M. George, they maintain the original culture and business model of low overhead, competitive pricing, and extraordinary service.
