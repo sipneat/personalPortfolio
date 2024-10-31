@@ -4,7 +4,7 @@ blurb: IT Support
 location: Roseville, CA
 link: /experiences/klaw/
 image: /assets/images/klaw.png
-priority: 4
+priority: 5
 
 bigImage: /assets/images/bigklaw.jpg
 role: File Clerk --> IT Support
