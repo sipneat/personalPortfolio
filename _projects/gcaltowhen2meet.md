@@ -4,7 +4,7 @@ blurb: Easily fill out when2meet's using your pre-existing calendar
 origin: Personal Project
 link: /projects/gcaltowhen2meet/
 image: /assets/images/gcaltowhen2meet.png
-priority: 1
+priority: 2
 
 other_link: https://chromewebstore.google.com/detail/google-calendar-to-when2m/kgplhfjcpgbnomnjbmeanljfgomihogf
 skills:

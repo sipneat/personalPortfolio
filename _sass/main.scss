@@ -154,7 +154,7 @@ p {
     visibility: hidden;
 }
 
-@for $i from 1 through 10 {
+@for $i from 1 through 20 {
     .experience:nth-child(#{$i}) {
         animation: appear 0.5s forwards;
         animation-delay: $i * 0.2s;

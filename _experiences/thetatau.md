@@ -3,7 +3,7 @@ name: Theta Tau
 blurb: Professional Engineering Fraternity
 location: Santa Clara, CA
 image: /assets/images/tt.png
-priority: 4
+priority: 5
 
 bigImage: /assets/images/bigtt.jpg
 role: Pledge Class Fundraising Chair --> Member

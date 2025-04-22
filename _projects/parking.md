@@ -4,7 +4,7 @@ blurb: Parking so nice, we added it twice!
 origin: INRIX Hack SCU 2023
 link: /projects/parking/
 image: /assets/images/parking.jpg
-priority: 4
+priority: 5
 
 github_link: https://github.com/sipneat/inrix-hack-2023
 devpost_link: https://devpost.com/software/parking-dkrpb5

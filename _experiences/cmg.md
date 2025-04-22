@@ -4,7 +4,7 @@ blurb: DevOps Engineering Intern
 location: Roseville, CA
 link: /experiences/cmg/
 image: /assets/images/cmg.jpg
-priority: 3
+priority: 4
 
 bigImage: /assets/images/bigcmg.png
 role: DevOps Engineering Intern
