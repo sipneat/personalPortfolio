@@ -1,523 +1,593 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu');
-$font-color: white;
-$nav-color: #761ec8;
-$hover-color: #933DC9;
+@font-face {
+  font-family: "Shapiro 55 Middle";
+  src: url("/assets/fonts/Shapiro-55-Middle") format("otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Orbitron";
+  src: url("/assets/fonts/Orbitron-VariableFont_wght") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PP Fraktion Mono";
+  src: url("/assets/fonts/PPFraktionMono-Regular") format("otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+$color-green: #c0fe04;
+$color-black: #000000;
+$color-white: #ffffff;
+$font-header: 'Orbitron', sans-serif;
+$font-mono: 'PP Fraktion Mono', monospace;
+$font-sans: 'Shapiro 55 Middle', sans-serif;
 
 @keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(5vh);
-        visibility: hidden;
-    }
+  from {
+    opacity: 0;
+    transform: translateY(5vh);
+    visibility: hidden;
+  }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-        visibility: visible;
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
 }
 
 @keyframes appear {
-    0% {
-        visibility: visible;
-        opacity: 0;
-    }
+  0% {
+    visibility: visible;
+    opacity: 0;
+  }
 
-    100% {
-        visibility: visible;
-        opacity: 1;
-    }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 
-    font: {
-        family: 'Ubuntu', sans-serif;
-        size: 1em;
-    }
+  font: {
+    family: $font-mono;
+    size: 1em;
+  }
 
-    background: linear-gradient(black, #22092C);
-    color: $font-color;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    background-attachment: fixed;
-    margin: 0 auto;
-    padding: 1rem;
-    max-width: 100em;
-    text-align: center;
-}
-
-hr {
-    border: 1px solid $nav-color;
-    width: 100%;
-    margin-top: 1.5em;
+  background: $color-black;
+  color: $color-green;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  background-attachment: fixed;
+  margin: 0 auto;
+  max-width: 100em;
+  text-align: center;
 }
 
 p {
-    line-height: 1.5;
-}
-
-.header {
-    text-align: center;
-    padding: 1em;
-    margin: 1em;
-    animation: slideUp 0.5s forwards;
+  line-height: 1.5;
 }
 
 .nav {
-    display: flex;
-    justify-content: space-between;
-    font-style: italic;
-    margin-top: 0.5em;
-    font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+  font-family: $font-header;
+  border-bottom: 1px solid $color-green;
 }
 
 .navItem {
-    color: $nav-color;
-    text-decoration: none;
+  color: $color-white;
+  text-decoration: none;
+  padding: 0.1em 0;
+  margin-left: 2em;
 
-    &:hover {
-        color: $hover-color;
+  &:hover {
+    color: $color-black;
+    background-color: $color-green;
+  }
+}
+
+.resume-card {
+  margin-left: auto;
+  padding: 1em;
+  background-color: $color-green;
+  color: $color-black;
+
+  &:hover {
+    padding: 0.95em;
+    background-color: $color-black;
+    color: $color-green;
+    border: 1px solid $color-green;
+  }
+}
+
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-black;
+  padding: 1em;
+
+  .intro-image img {
+    width: 50%;
+    height: auto;
+  }
+
+  .intro-text {
+    text-align: center;
+
+    h1 {
+      font-family: $font-header;
+      color: $color-white;
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
     }
+
+    p {
+      font-size: 1em;
+    }
+  }
+}
+
+#cursor-text {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  font-family: $font-header;
+  font-size: 2em;
+  color: $color-black;
+  pointer-events: none;
+  display: none;
+  z-index: 1000;
+  white-space: nowrap;
 }
 
 .pane {
-    visibility: hidden;
+  display: flex;
+
+  .paneItem {
+    width: 33%;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.paneItem {
-    display: flex;
-    align-items: center;
     justify-content: center;
-    color: $font-color;
-    width: 35em;
-    max-width: 100%;
+    text-align: center;
+    padding: 1em;
     text-decoration: none;
-    margin-bottom: 0.7em;
-    border-radius: 100px;
+    position: relative;
 
     &:hover {
-        background-color: $hover-color;
-        transition: background-color 0.5s;
+      cursor: none;
     }
 
-    transition: background-color 0.5s;
-}
-
-@for $i from 1 through 10 {
-    .paneItem:nth-child(#{$i}) {
-        animation: appear 0.5s forwards;
-        animation-delay: $i * 0.5s;
+    h2 {
+      font-family: $font-header;
     }
+  }
 }
 
-.paneItem h2,
-.paneItem p {
-    margin: 1em;
+.paneItem.white {
+  color: $color-black;
+  background-color: $color-white;
+}
+
+.paneItem.green {
+  color: $color-black;
+  background-color: $color-green;
+}
+
+.paneItem.black {
+  color: $color-green;
+  background-color: $color-black;
 }
 
 .projects {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .experiences {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .project,
 .experience {
-    color: $font-color;
-    display: flex;
-    justify-content: space-between;
-    margin: 1em;
-    width: 60em;
-    max-width: 100%;
-    border-radius: 20px;
+  color: $color-green;
+  display: flex;
+  justify-content: space-between;
+  margin: 1em;
+  width: 60em;
+  max-width: 100%;
+  border-radius: 20px;
 
-    &:hover {
-        background-color: $hover-color;
-        transition: background-color 0.5s;
-    }
-
+  &:hover {
+    background-color: $color-white;
     transition: background-color 0.5s;
-    text-decoration: none;
-    visibility: hidden;
+  }
+
+  transition: background-color 0.5s;
+  text-decoration: none;
+  visibility: hidden;
 }
 
 @for $i from 1 through 20 {
-    .experience:nth-child(#{$i}) {
-        animation: appear 0.5s forwards;
-        animation-delay: $i * 0.2s;
-    }
+  .experience:nth-child(#{$i}) {
+    animation: appear 0.5s forwards;
+    animation-delay: $i * 0.2s;
+  }
 
-    .project:nth-child(#{$i}) {
-        animation: slideUp 0.5s forwards;
-        animation-delay: $i * 0.2s;
-    }
+  .project:nth-child(#{$i}) {
+    animation: slideUp 0.5s forwards;
+    animation-delay: $i * 0.2s;
+  }
 }
 
 button {
-    background-color: transparent;
-    border: none;
-    border-radius: 10px;
-    padding: 0.2em;
-    margin: 1em;
-    cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-radius: 10px;
+  padding: 0.2em;
+  margin: 1em;
+  cursor: pointer;
 
-    &:hover {
-        background-color: $hover-color;
-        transition: background-color 0.5s;
-    }
-
+  &:hover {
+    background-color: $color-white;
     transition: background-color 0.5s;
+  }
+
+  transition: background-color 0.5s;
 }
 
 .projectContainer,
 .experienceContainer {
-    width: 40em;
-    display: flex;
-    align-items: center;
-    justify-content: left;
+  width: 40em;
+  display: flex;
+  align-items: center;
+  justify-content: left;
 }
 
 .projectOrigin {
-    max-width: 20em;
-    margin: 1em;
-    display: flex;
-    align-items: center;
-    justify-content: right;
+  max-width: 20em;
+  margin: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: right;
 }
 
 .projectImage,
 .experienceImage {
-    margin: 0.5em;
+  margin: 0.5em;
 }
 
 .projectImage img,
 .experienceImage img {
-    width: 7em;
-    height: 7em;
-    border-radius: 15px;
+  width: 7em;
+  height: 7em;
+  border-radius: 15px;
 }
 
 .projectInfo,
 .experienceInfo {
-    padding: 1em;
-    text-align: left;
+  padding: 1em;
+  text-align: left;
 }
 
 .projectsPage {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .backToProjects {
-    display: flex;
-    justify-content: left;
-    text-decoration: none;
-    color: $nav-color;
+  display: flex;
+  justify-content: left;
+  text-decoration: none;
+  color: $color-green;
 
-    &:hover {
-        color: $hover-color;
-    }
+  &:hover {
+    color: $color-white;
+  }
 
-    margin-top: 1em;
+  margin-top: 1em;
 }
 
 .projectBodyText {
-    flex: 1, 0, 50%;
-    text-align: left;
-    width: 50em;
+  flex: 1, 0, 50%;
+  text-align: left;
+  width: 50em;
 }
 
 .projectImages {
-    flex: 1, 0, 50%;
-    width: 40em;
+  flex: 1, 0, 50%;
+  width: 40em;
 }
 
 @media screen and (max-width: 600px) {
 
-    .projectBodyText,
-    .projectImages {
-        flex: 1, 0, 100%;
-    }
+  .projectBodyText,
+  .projectImages {
+    flex: 1, 0, 100%;
+  }
 }
 
 .projectImages img,
 .projectImages iframe {
-    width: 100%;
-    height: 20em;
-    margin: 0.5em;
+  width: 100%;
+  height: 20em;
+  margin: 0.5em;
 }
 
 .projectHeader {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .projectHeader img {
-    width: 5em;
-    height: 5em;
-    border-radius: 15px;
-    margin: 0.5em;
-    margin-left: 1em;
+  width: 5em;
+  height: 5em;
+  border-radius: 15px;
+  margin: 0.5em;
+  margin-left: 1em;
 }
 
 .projectLinksDiv {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .projectLinks {
-    text-decoration: none;
-    color: $nav-color;
+  text-decoration: none;
+  color: $color-green;
 
-    &:hover {
-        color: $hover-color;
-    }
+  &:hover {
+    color: $color-white;
+  }
 
-    margin: 1em;
+  margin: 1em;
 }
 
 .projectContent a {
-    color: $font-color;
-    text-decoration: none;
+  color: $color-green;
+  text-decoration: none;
 
-    &:hover {
-        color: $hover-color;
-    }
+  &:hover {
+    color: $color-white;
+  }
 }
 
 .projectSkills {
-    margin-top: 2em;
-    margin-bottom: 2em;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 .skill {
-    display: inline-block;
-    color: $font-color;
-    margin-right: 0.8em;
-    margin-bottom: 0.8em;
-    border: 2px solid $nav-color;
-    background-color: rgba(147, 61, 201, 0.5);
-    border-radius: 10px;
-    padding: 0.4em;
-    user-select: none;
+  display: inline-block;
+  color: $color-green;
+  margin-right: 0.8em;
+  margin-bottom: 0.8em;
+  border: 2px solid $color-green;
+  background-color: rgba(147, 61, 201, 0.5);
+  border-radius: 10px;
+  padding: 0.4em;
+  user-select: none;
 }
 
 .experience {
-    color: $font-color;
-    width: 30em;
+  color: $color-green;
+  width: 30em;
 }
 
 .popup {
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: none;
-    animation: appear 0.7s forwards;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  animation: appear 0.7s forwards;
 }
 
 .popupContent {
-    position: relative;
-    background-color: #22092C;
-    padding: 2em;
-    padding-right: 2em;
-    border: 2px solid $nav-color;
-    border-radius: 20px;
-    margin: auto;
-    width: 50%;
-    height: 70%;
-    overflow-y: auto;
-    overflow-x: hidden;
-    transform: translate(0, 4rem);
-    animation: appear 0.7s forwards;
+  position: relative;
+  background-color: #22092C;
+  padding: 2em;
+  padding-right: 2em;
+  border: 2px solid $color-green;
+  border-radius: 20px;
+  margin: auto;
+  width: 50%;
+  height: 70%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transform: translate(0, 4rem);
+  animation: appear 0.7s forwards;
 
-    ::-webkit-scrollbar {
-        display: none;
-    }
+  ::-webkit-scrollbar {
+    display: none;
+  }
 
-    -ms-text-overflow: none;
-    text-overflow: none;
-    scrollbar-width: none;
+  -ms-text-overflow: none;
+  text-overflow: none;
+  scrollbar-width: none;
 }
 
 .popupContainer {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .popupContainer p {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .popupContainer img {
-    width: 5em;
-    height: auto;
-    border-radius: 15px;
-    margin-left: 1em;
+  width: 5em;
+  height: auto;
+  border-radius: 15px;
+  margin-left: 1em;
 }
 
 .popupBigImage {
-    max-width: 50%;
-    height: auto;
-    border-radius: 15px;
-    margin-bottom: 1em;
+  max-width: 50%;
+  height: auto;
+  border-radius: 15px;
+  margin-bottom: 1em;
 }
 
 @media screen and (max-width: 600px) {
-    .popupBigImage {
-        max-width: 100%;
-    }
+  .popupBigImage {
+    max-width: 100%;
+  }
 
 }
 
 .popupHeader {
-    width: 100%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .popupContent hr {
-    margin: 1em auto;
-    width: 95%;
+  margin: 1em auto;
+  width: 95%;
 }
 
 .popupContent p {
-    text-align: left;
-    margin: 1em;
+  text-align: left;
+  margin: 1em;
 }
 
 .show {
-    display: block;
+  display: block;
 }
 
 .otherSection {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 3em;
-    visibility: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 3em;
+  visibility: hidden;
 
-    @media screen and (max-width: 1500px) {
-        flex-direction: column;
-    }
+  @media screen and (max-width: 1500px) {
+    flex-direction: column;
+  }
 }
 
 @for $i from 1 through 10 {
-    .otherSection:nth-child(#{$i}) {
-        animation: slideUp 1s forwards;
-        animation-delay: $i * 0.2s;
-    }
+  .otherSection:nth-child(#{$i}) {
+    animation: slideUp 1s forwards;
+    animation-delay: $i * 0.2s;
+  }
 }
 
 .otherContent {
-    width: 50%;
-    padding-left: 1em;
-    text-align: left;
+  width: 50%;
+  padding-left: 1em;
+  text-align: left;
 }
 
 .otherContent:nth-child(even) {
-    padding-left: 0;
-    padding-right: 1em;
-    text-align: right;
+  padding-left: 0;
+  padding-right: 1em;
+  text-align: right;
 }
 
 @media screen and (max-width: 1500px) {
 
-    .otherContent,
-    .otherContent:nth-child(even) {
-        text-align: center;
-        padding-right: 0;
-    }
+  .otherContent,
+  .otherContent:nth-child(even) {
+    text-align: center;
+    padding-right: 0;
+  }
 }
 
 .otherContent a {
-    color: $nav-color;
-    text-decoration: none;
+  color: $color-green;
+  text-decoration: none;
 
-    &:hover {
-        color: $hover-color;
-    }
+  &:hover {
+    color: $color-white;
+  }
 }
 
 .otherImages {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 50%;
-    padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  padding: 0;
 }
 
 @media screen and (max-width: 600px) {
-    .otherImages {
-        flex-direction: column;
-        width: 100%;
-    }
+  .otherImages {
+    flex-direction: column;
+    width: 100%;
+  }
 
 }
 
 .otherImages img {
-    width: 20em;
-    height: auto;
-    border-radius: 15px;
-    margin: 1em;
+  width: 20em;
+  height: auto;
+  border-radius: 15px;
+  margin: 1em;
 }
 
 @media screen and (max-width: 1500px) {
-    .otherImages img {
-        width: 50%;
-    }
+  .otherImages img {
+    width: 50%;
+  }
 }
 
 .footer {
-    margin-top: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  color: $color-white;
 }
 
 .footer a {
-    color: #D90200;
-    text-decoration: none;
+  color: #D90200;
+  text-decoration: none;
 }
 
 .footerRight {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .footerRight img {
-    width: 3em;
-    height: 3em;
-    margin: 0.5em;
+  width: 3em;
+  height: 3em;
+  margin: 0.5em;
 }
 
 .footer span {
-    color: #22092C;
-    background-color: white;
-    border-radius: 50px;
-    padding: 1em;
-    margin: 0.5em;
+  color: #22092C;
+  background-color: white;
+  border-radius: 50px;
+  padding: 1em;
+  margin: 0.5em;
 }

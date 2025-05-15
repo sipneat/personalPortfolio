@@ -1,7 +1,10 @@
 <nav class="nav">
-    {% for item in site.data.navigation %}
-    <a class="navItem" href="{{ item.link }}" {% if page.url==item.link %}class="current" {% endif %}>
-        {{ item.name }}
-    </a>
-    {% endfor %}
+  {% for item in site.data.navigation %}
+  <a class="navItem" href="{{ item.link }}">
+    {{ item.name }}
+  </a>
+  {% endfor %}
+  <a href="/assets/resume.pdf" class="resume-card" target="_blank">
+    Resume
+  </a>
 </nav>
