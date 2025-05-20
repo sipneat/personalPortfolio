@@ -14,12 +14,12 @@ title: Other
     <div class="other-section">
       <div class="other-content">
         <h2>{{ item.title }}</h2>
-        <p>
+        <div>
           {{ item.content }}
           {% if item.link %}
           <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">here</a>
           {% endif %}
-        </p>
+        </div>
       </div>
       <div class="other-images">
         <img src="{{ item.image1 }}" alt="{{ item.title }}">
@@ -34,12 +34,12 @@ title: Other
       </div>
       <div class="other-content">
         <h2>{{ item.title }}</h2>
-        <p>
+        <div>
           {{ item.content }}
           {% if item.link %}
           <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">here</a>
           {% endif %}
-        </p>
+        </div>
       </div>
     </div>
     {% endif %}

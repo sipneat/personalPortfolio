@@ -12,22 +12,31 @@ async function getWakatimeStats() {
 }
 
 function setStats(data) {
-  const currentStats = document.querySelector(".wakatime-current");
+  const currentStats = document.querySelector(".wakatime-current-container");
   const weekStats = document.querySelector(".wakatime-week-container");
 
   document.querySelectorAll(".wakatime-loading").forEach(e => {
     e.style.display = "none";
   });
 
-  data.current.data.projects.forEach(project => {
-    const projectElement = document.createElement("div");
-    projectElement.classList.add("wakatime-project");
-    projectElement.innerHTML = `
-      <h3>${project.name}</h3>
-      <p>${project.text}</p>
+  if (data.current.data.projects.length === 0) {
+    const noDataElement = document.createElement("div");
+    noDataElement.classList.add("wakatime-no-data");
+    noDataElement.innerHTML = `
+      <h3>Nothing yet today</h3>
     `;
-    currentStats.appendChild(projectElement);
-  });
+    currentStats.appendChild(noDataElement);
+  } else {
+    data.current.data.projects.forEach(project => {
+      const projectElement = document.createElement("div");
+      projectElement.classList.add("wakatime-project");
+      projectElement.innerHTML = `
+        <h3>${project.name}</h3>
+        <p>${project.text}</p>
+      `;
+      currentStats.appendChild(projectElement);
+    });
+  }
 
   const devOpsLanguages = ["Terraform", "Terraform Template", "YAML", "Docker", "Python", "Go", "Bash", "Powershell"];
   const filteredLanguages = data.week.data.languages
