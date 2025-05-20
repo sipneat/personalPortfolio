@@ -2,63 +2,74 @@
 title: Experience
 ---
 
+<div class="experience-page">
 <h1>{{ page.title }}</h1>
 
 <p>I'm actively searching for co-op/full-time SWE roles starting Fall 2025.</p>
 <p>Click on an experience to learn more.</p>
 
 <div class="experiences">
-    {% assign sorted_experiences = site.experiences | sort:"priority" %}
-    {% for experience in sorted_experiences %}
-    <button class="experience" id="clickPopup{{ forloop.index }}">
-        <div class="experienceContainer">
-            <div class="experienceImage">
-                <img src="{{ experience.image }}" alt="{{ experience.name }}">
-            </div>
-            <div class="experienceInfo">
-                <h2>{{ experience.name }}</h2>
-                <p><strong>{{ experience.location }}</strong></p>
-                <p>{{ experience.blurb }}</p>
-            </div>
-        </div>
-    </button>
-    <div id="myPopup{{ forloop.index }}" class="popup">
-        <div class="popupContent">
-            <img class="popupBigImage" src="{{ experience.bigImage }}" alt="{{ experience.name }}">
-            <div class=popupHeader>
-                <div class="popupContainer">
-                    <h2>{{ experience.name }}</h2>
-                    <p><strong>{{ experience.location }}</strong></p>
-                </div>
-                <div class="popupContainer">
-                    <img src="{{ experience.image }}" alt="{{ experience.name }}">
-                </div>
-            </div>
-            <p>Position: {{ experience.role }}</p>
-            <p>{{ experience.duration }}</p>
-            <hr>
-            <p>{{ experience.content }}</p>
-        </div>
+  {% assign sorted_experiences = site.experiences | sort:"priority" %}
+  {% for experience in sorted_experiences %}
+  <button class="experience" id="clickPopup{{ forloop.index }}">
+    <div class="experience-container">
+      <div class="experience-image">
+        <img src="{{ experience.image }}" alt="{{ experience.name }}">
+      </div>
+      <div class="experience-info">
+        <h2>{{ experience.name }}</h2>
+        <p><strong>{{ experience.location }}</strong></p>
+        <p>{{ experience.blurb }}</p>
+      </div>
     </div>
+  </button>
 
-    {% endfor %}
+  <div id="experience-popup{{ forloop.index }}" class="popup">
+    <div class="popup-content">
+      <button id="close-button{{ forloop.index }}" class="close-button">X</button>
+      <img class="popup-big-image" src="{{ experience.bigImage }}" alt="{{ experience.name }}">
+      <div class=popup-header>
+        <div class="popup-container">
+          <h2>{{ experience.name }}</h2>
+          <p><strong>{{ experience.location }}</strong></p>
+        </div>
+        <div class="popup-container">
+          <img src="{{ experience.image }}" alt="{{ experience.name }}">
+        </div>
+      </div>
+      <p>Position: {{ experience.role }}</p>
+      <p>{{ experience.duration }}</p>
+      <hr>
+      <p>{{ experience.content }}</p>
+    </div>
+  </div>
+
+  {% endfor %}
+</div>
 </div>
 
 <script>
-    var clickPopups = document.querySelectorAll('.experience');
-    var myPopups = document.querySelectorAll('.popup');
+  var showPopups = document.querySelectorAll('.experience');
+  var closeButtons = document.querySelectorAll('.close-button');
+  var popups = document.querySelectorAll('.popup');
 
-    clickPopups.forEach(function (clickPopup, index) {
-        clickPopup.addEventListener('click', function () {
-            myPopups[index].classList.add('show');
-        });
+  showPopups.forEach(function (popup, index) {
+    popup.addEventListener('click', function () {
+      popups[index].classList.add('show');
     });
+  });
 
-    window.addEventListener('click', function (event) {
-        myPopups.forEach(function (myPopup) {
-            if (event.target == myPopup) {
-                myPopup.classList.remove('show');
-            }
-        });
+  closeButtons.forEach(function (button, index) {
+    button.addEventListener('click', function () {
+      popups[index].classList.remove('show');
     });
+  });
+
+  window.addEventListener('click', function (event) {
+    popups.forEach(function (popup) {
+      if (event.target == popup) {
+        popup.classList.remove('show');
+      }
+    });
+  });
 </script>

@@ -2,27 +2,28 @@
 title: Projects
 ---
 
-<h1>{{ page.title }}</h1>
+<div class="projects-page">
+  <h1>{{ page.title }}</h1>
+  <p>Click on a project to learn more and view its GitHub repository and live demo if available.</p>
 
-<p>Click on a project to learn more and view its GitHub repository and live demo if available.</p>
-
-<div class="projects">
+  <div>
     {% assign sorted_projects = site.projects | sort:"priority" %}
     {% for project in sorted_projects %}
     <a class="project" href="{{ project.link }}">
-        <div class="projectContainer">
-            <div class="projectImage">
-                <img src="{{ project.image }}" alt="{{ project.title }}">
-            </div>
-            <div class="projectInfo">
-                <h2>{{ project.title }}</h2>
-                <p>{{ project.blurb }}</p>
-            </div>
+      <div class="project-container">
+        <div class="project-image">
+          <img src="{{ project.image }}" alt="{{ project.title }}">
         </div>
-        <div class="projectOrigin">
-            <p><strong>{{ project.origin }}</strong></p>
+        <div class="project-info">
+          <h2>{{ project.title }}</h2>
+          <p>{{ project.blurb }}</p>
         </div>
+      </div>
+      <div class="project-origin">
+        <p><strong>{{ project.origin }}</strong></p>
+      </div>
     </a>
 
     {% endfor %}
+  </div>
 </div>

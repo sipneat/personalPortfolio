@@ -2,32 +2,52 @@
 title: Jake Esperson
 ---
 
-<div class="intro">
-  <div class="intro-image">
-    <img src="/assets/images/headshot.jpg" alt="Jake Esperson">
+<div class="index-page">
+  <div class="intro">
+    <div class="intro-image">
+      <img src="/assets/images/headshot.jpg" alt="Jake Esperson">
+    </div>
+    <div class="intro-text">
+      <h1>Jake Esperson</h1>
+      <p>I'm a student currently studying at Santa Clara University. I've made my lifelong passion of Computer Science
+        into my career, so feel free to look at what I've done!</p>
+    </div>
   </div>
-  <div class="intro-text">
-    <h1>Jake Esperson</h1>
-    <p>I'm a student currently studying at Santa Clara University. I've made my lifelong passion of Computer Science
-      into my career, so feel free to look at what I've done!</p>
+
+  <div id="cursor-text"></div>
+
+  <div class="pane">
+    <a class="pane-item white" href="/projects/">
+      <h2>Projects</h2>
+      <p>Hackathons, personal projects, and more.</p>
+    </a>
+    <a class="pane-item green" href="/experience/">
+      <h2>Experience</h2>
+      <p>Internships and professional experiences.</p>
+    </a>
+    <a class="pane-item black" href="/other/">
+      <h2>Other</h2>
+      <p>My baseball achievements, life, and other stuff.</p>
+    </a>
   </div>
-</div>
-
-<div id="cursor-text"></div>
-
-<div class="pane">
-  <a class="paneItem white" href="/projects/">
-    <h2>Projects</h2>
-    <p>Hackathons, personal projects, and more.</p>
-  </a>
-  <a class="paneItem green" href="/experience/">
-    <h2>Experience</h2>
-    <p>Internships and professional experiences.</p>
-  </a>
-  <a class="paneItem black" href="/other/">
-    <h2>Other</h2>
-    <p>My baseball achievements, life, and other stuff.</p>
-  </a>
+  <div class="wakatime">
+    <h2>Coding Stats (powered by <a target="_blank" href="https://wakatime.com/@sipneat">Wakatime</a>)</h2>
+    <div class="wakatime-container">
+      <div class="wakatime-current">
+        <h2>What I've worked on today</h2>
+        <p class="wakatime-loading">Loading...</p>
+        <!-- Filled by JS -->
+      </div>
+      <div class="wakatime-week">
+        <h2>What I've worked with this week</h2>
+        <p class="wakatime-loading">Loading...</p>
+        <div class="wakatime-week-container">
+          <!-- Filled by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script src="/assets/js/cursor.js"></script>
+<script src="/assets/js/wakatime.js"></script>

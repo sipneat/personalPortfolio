@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
   const cursorText = document.getElementById('cursor-text');
-  const paneItems = document.querySelectorAll('.paneItem');
+  const paneItems = document.querySelectorAll('.pane-item');
 
   document.addEventListener('mousemove', (e) => {
-    cursorText.style.left = `${e.pageX}px`;
-    cursorText.style.top = `${e.pageY}px`;
+    cursorText.style.left = `${e.clientX}px`;
+    cursorText.style.top = `${e.clientY}px`;
   });
 
   paneItems.forEach((item) => {
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
       cursorText.textContent = `[ ${text} ]`;
       cursorText.style.display = 'block';
 
-      if (getComputedStyle(item).color !== 'rgb(0, 0, 0)') {
+      if (getComputedStyle(item.querySelector('h2')).color !== 'rgb(0, 0, 0)') {
         cursorText.style.color = '#c0fe04';
       }
       item.querySelector('h2').textContent = "";
