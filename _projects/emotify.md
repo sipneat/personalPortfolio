@@ -4,7 +4,7 @@ blurb: A mobile app to get you in touch with your emotions
 origin: Hack For Humanity 2023
 link: /projects/emotify/
 image: /assets/images/emotify.png
-priority: 9
+priority: 10
 
 github_link: https://github.com/sipneat/Emotify
 devpost_link: https://devpost.com/software/emotify-s3mg4t

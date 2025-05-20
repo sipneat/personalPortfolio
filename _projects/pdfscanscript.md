@@ -4,7 +4,7 @@ blurb: A Python script to scan PDFs for streamlining legal productivity
 origin: Personal Project
 link: /projects/pdfscanscript/
 image: /assets/images/pdfscanscript.png
-priority: 7
+priority: 8
 
 github_link: https://github.com/sipneat/PDFScanScript
 skills:

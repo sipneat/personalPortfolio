@@ -2,45 +2,45 @@
 title: Other
 ---
 
-<h1>{{ page.title }}</h1>
+<div class="other-page">
+  <h1>{{ page.title }}</h1>
 
-<p>I'm more than just a Computer Science student. Check out some of the things I do outside of my studies and
+  <p>I'm more than just a Computer Science student. Check out some of the things I do outside of my studies and
     professional development!</p>
 
-<div class="other">
     {% for item in site.data.others %}
     {% assign is_even = forloop.index | modulo: 2 %}
     {% if is_even == 1 %}
-    <div class="otherSection">
-        <div class="otherContent">
-            <h2>{{ item.title }}</h2>
-            <p>
-                {{ item.content }}
-                {% if item.link %}
-                <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">here</a>
-                {% endif %}
-            </p>
+    <div class="other-section">
+      <div class="other-content">
+        <h2>{{ item.title }}</h2>
+        <div>
+          {{ item.content }}
+          {% if item.link %}
+          <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">here</a>
+          {% endif %}
         </div>
-        <div class="otherImages">
-            <img src="{{ item.image1 }}" alt="{{ item.title }}">
-            <img src="{{ item.image2 }}" alt="{{ item.title }}">
-        </div>
+      </div>
+      <div class="other-images">
+        <img src="{{ item.image1 }}" alt="{{ item.title }}">
+        <img src="{{ item.image2 }}" alt="{{ item.title }}">
+      </div>
     </div>
     {% else %}
-    <div class="otherSection">
-        <div class="otherImages">
-            <img src="{{ item.image1 }}" alt="{{ item.title }}">
-            <img src="{{ item.image2 }}" alt="{{ item.title }}">
+    <div class="other-section">
+      <div class="other-images">
+        <img src="{{ item.image1 }}" alt="{{ item.title }}">
+        <img src="{{ item.image2 }}" alt="{{ item.title }}">
+      </div>
+      <div class="other-content">
+        <h2>{{ item.title }}</h2>
+        <div>
+          {{ item.content }}
+          {% if item.link %}
+          <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">here</a>
+          {% endif %}
         </div>
-        <div class="otherContent">
-            <h2>{{ item.title }}</h2>
-            <p>
-                {{ item.content }}
-                {% if item.link %}
-                <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">here</a>
-                {% endif %}
-            </p>
-        </div>
+      </div>
     </div>
     {% endif %}
     {% endfor %}

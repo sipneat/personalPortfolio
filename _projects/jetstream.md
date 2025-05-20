@@ -1,10 +1,10 @@
 ---
 title: JetStream
 blurb: A web application that allows you to get anywhere
-origin: INRIX Hack Seattle 2023
+origin: AWS x INRIX Hack Seattle 2023
 link: /projects/jetstream/
 image: /assets/images/jetstream.png
-priority: 4
+priority: 5
 
 github_link: https://github.com/jordanmosakowski/inrix-hack-23
 devpost_link: https://devpost.com/software/jetstream-7pas4o

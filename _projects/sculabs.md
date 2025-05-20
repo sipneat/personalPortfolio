@@ -4,7 +4,7 @@ blurb: Labs that I have done for my major
 origin: Santa Clara University
 link: /projects/sculabs/
 image: /assets/images/scu.png
-priority: 8
+priority: 9
 
 github_link: https://github.com/sipneat
 skills:

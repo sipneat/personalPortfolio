@@ -1,22 +1,23 @@
 permalink: pretty
+incremental: true
 
 plugins:
-    - jekyll-feed
-    - jekyll-sitemap
-    - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
 
 collections:
-    projects:
-        output: true
-    experiences:
+  projects:
+    output: true
+  experiences:
 
 defaults:
-    - scope:
-          path: ""
-          type: "projects"
-      values:
-          layout: "projects"
-    - scope:
-          path: ""
-      values:
-          layout: "default"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
