@@ -36,8 +36,8 @@ pipeline {
       steps {
         withCredentials([string(credentialsId: 'wakatime_token', variable: 'WAKATIME_API_KEY')]) {
           sh '''
-            env WAKATIME_API_KEY=$WAKATIME_API_KEY \
-            env COMPOSE_PROJECT_NAME=portfolio-website \
+            env WAKATIME_API_KEY=$WAKATIME_API_KEY
+            env COMPOSE_PROJECT_NAME=portfolio-website
             docker compose -f ./pipelines/docker-compose.yml down --remove-orphans || true
             docker compose -f ./pipelines/docker-compose.yml up -d --build
           '''
