@@ -17,7 +17,9 @@ pipeline {
     stage('Build Image') {
       when {
         anyOf {
-          changeset(["Gemfile", "Gemfile.lock", "./pipelines/jekyll.Dockerfile"])
+          changeset "Gemfile"
+          changeset "Gemfile.lock"
+          changeset "./pipelines/jekyll.Dockerfile"
           expression { !sh(script: 'docker image inspect portfolio-jekyll:latest > /dev/null 2>&1', returnStatus: true) == 0 }
         }
       }
