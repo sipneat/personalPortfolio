@@ -1,3 +1,5 @@
+name: portfolio-website
+
 services:
   nginx:
     image: nginx
