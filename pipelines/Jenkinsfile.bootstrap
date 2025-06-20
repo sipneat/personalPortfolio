@@ -1,14 +1,14 @@
-options {
-  disableConcurrentBuilds()
-  skipDefaultCheckout()
-}
-
-parameters{
-  booleanParam(name: 'CONFIRM', defaultValue: false, description: 'Run bootstrap?')
-}
-
 pipeline {
   agent any
+
+  options {
+    disableConcurrentBuilds()
+    skipDefaultCheckout()
+  }
+
+  parameters{
+    booleanParam(name: 'CONFIRM', defaultValue: false, description: 'Run bootstrap?')
+  }
   
   stages {
     stage('Checkout') {
