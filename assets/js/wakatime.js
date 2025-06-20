@@ -1,6 +1,6 @@
 async function getWakatimeStats() {
   try {
-    const response = await fetch("http://api:3000/portfolio/wakatime");
+    const response = await fetch("http://api.homelab/portfolio/wakatime");
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
