@@ -39,7 +39,7 @@ pipeline {
       }
       
       steps {
-        withCredentials(string(credentialsId: 'wakatime_token', variable: 'WAKATIME_API_KEY')) {
+        withCredentials([string(credentialsId: 'wakatime_token', variable: 'WAKATIME_API_KEY')]) {
           sh '''
             env WAKATIME_API_KEY=$WAKATIME_API_KEY \
             env COMPOSE_PROJECT_NAME=portfolio-website \
