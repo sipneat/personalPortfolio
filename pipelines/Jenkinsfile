@@ -1,6 +1,12 @@
 pipeline {
   agent any
 
+  options {
+    disableConcurrentBuilds()
+    timestamps()
+    skipDefaultCheckout()
+  }
+
   stages{
     stage('Checkout') {
       steps {
