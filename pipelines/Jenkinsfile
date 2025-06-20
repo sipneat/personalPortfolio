@@ -34,7 +34,7 @@ pipeline {
         sh '''
           docker run --rm \
           -v $PWD:/app/source \
-          -v ~/Containers/portfolio/dev:/app/site-output \
+          -v /home/jake-homelab/Containers/portfolio/dev:/app/site-output \
           portfolio-jekyll:latest \
           bundle exec jekyll build --source /app/source --destination /app/site-output
         '''
@@ -69,7 +69,7 @@ pipeline {
             sh '''
               docker run --rm \
               -v $PWD:/app/source \
-              -v ~/Containers/portfolio/prod:/app/site-output  \
+              -v /home/jake-homelab/Containers/portfolio/prod:/app/site-output  \
               portfolio-jekyll:latest \
               bundle exec jekyll build --source /app/source --destination /app/site-output
             '''
