@@ -1,6 +1,6 @@
 async function getWakatimeStats() {
   try {
-    const response = await fetch("http://api.homelab/portfolio/wakatime");
+    const response = await fetch("/api/wakatime");
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
@@ -30,8 +30,9 @@ function setStats(data) {
     data.current.data.projects.forEach(project => {
       const projectElement = document.createElement("div");
       projectElement.classList.add("wakatime-project");
+      let projectName = project.name === "jesperson" ? "SCU Lab" : project.name;
       projectElement.innerHTML = `
-        <h3>${project.name}</h3>
+        <h3>${projectName}</h3>
         <p>${project.text}</p>
       `;
       currentStats.appendChild(projectElement);

@@ -10,7 +10,6 @@ collections:
   projects:
     output: true
   experiences:
-    output: false
 
 defaults:
   - scope:
@@ -22,11 +21,3 @@ defaults:
       path: ""
     values:
       layout: "default"
-  - scope:
-      path: "404.html"
-    values:
-      permalink: "/404.html"
-
-exclude:
-  - api
-  - pipelines
