@@ -4,7 +4,7 @@ blurb: Junior DevOps Engineer
 location: Remote
 link: /experiences/cmg2/
 image: /assets/images/cmg.jpg
-priority: 3
+priority: 4
 
 bigImage: /assets/images/bigcmg.png
 role: Junior DevOps Engineer

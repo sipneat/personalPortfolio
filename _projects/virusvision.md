@@ -4,7 +4,7 @@ blurb: Seeing safety with precision
 origin: Hack for Humanity 2024
 link: /projects/virusvision/
 image: /assets/images/virusvision.png
-priority: 4
+priority: 5
 
 github_link: https://github.com/AnishKatr/H4H-2024
 devpost_link: https://devpost.com/software/virus-vision

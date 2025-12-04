@@ -3,7 +3,7 @@ name: SCUACM
 blurb: President
 location: Santa Clara, CA
 image: /assets/images/acm.png
-priority: 2
+priority: 3
 
 bigImage: /assets/images/bigacm1.jpg
 role: Underclass Rep --> Workshop Coordinator --> Vice President --> President

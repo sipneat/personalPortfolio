@@ -4,7 +4,7 @@ blurb: My personal DevOps development environment
 origin: Personal Project
 link: /projects/devopslab/
 image: /assets/images/devopslab.png
-priority: 1
+priority: 2
 
 github_link: https://github.com/sipneat/devops-lab
 skills:

@@ -4,7 +4,7 @@ blurb: A Flutter app to help you find the best housing
 origin: Senior Design Capstone Project
 link: /projects/bronconest/
 image: /assets/images/bronconest.png
-priority: 2
+priority: 3
 
 github_link: https://github.com/CSEN196Lab-S2025/senior-design-project-42_ceak_bronconest
 skills:
